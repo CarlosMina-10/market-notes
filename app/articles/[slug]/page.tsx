@@ -58,18 +58,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const mdxComponents = {
   // Styled blockquote (pull quote)
-  blockquote: ({ children }: { children: React.ReactNode }) => (
+  blockquote: ({ children }: { children?: React.ReactNode }) => (
     <blockquote className="border-l-4 border-mn-accent bg-mn-surface/50 px-6 py-5 my-8 italic text-xl text-[#cbd5e1] font-display leading-relaxed">
       {children}
     </blockquote>
   ),
   // Styled Market Notes Take — use a <strong> wrapper in MDX for the take label
-  h2: ({ children }: { children: React.ReactNode }) => (
+  h2: ({ children }: { children?: React.ReactNode }) => (
     <h2 className="font-display text-2xl text-white mt-12 mb-4 tracking-tight">
       {children}
     </h2>
   ),
-  h3: ({ children }: { children: React.ReactNode }) => (
+  h3: ({ children }: { children?: React.ReactNode }) => (
     <h3 className="font-display text-xl text-white mt-8 mb-3">{children}</h3>
   ),
   hr: () => <hr className="border-none border-t border-mn-border my-10" />,
