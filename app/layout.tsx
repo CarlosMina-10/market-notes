@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     default: 'Market Notes — Where Business, Finance, and Community Impact Meet',
   },
   description:
-    'Independent analysis at the intersection of business, finance, and community impact. Written by a finance professional with experience across three continents.',
+    'Where business, finance and community impact meet. Analysis at the intersection of capital and community impact — written by a curious mind.',
   keywords: [
     'finance',
     'business',
@@ -46,20 +46,13 @@ export const metadata: Metadata = {
     siteName: 'Market Notes',
     title: 'Market Notes — Where Business, Finance, and Community Impact Meet',
     description:
-      'Independent analysis at the intersection of business, finance, and community impact.',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Market Notes',
-      },
-    ],
+      'Where business, finance and community impact meet. Analysis at the intersection of capital and community impact — written by a curious mind.',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Market Notes' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Market Notes',
-    description: 'Where Business, Finance, and Community Impact Meet',
+    description: 'Where business, finance and community impact meet.',
     images: ['/og-image.png'],
     creator: '@marketnotes_co',
   },
@@ -76,16 +69,9 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={`${dmSerifDisplay.variable} ${dmSans.variable}`}
-    >
+    <html lang="en" className={`${dmSerifDisplay.variable} ${dmSans.variable}`}>
       <body>
         <Navbar />
         <main className="min-h-screen">{children}</main>

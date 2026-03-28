@@ -2,8 +2,12 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import readingTime from 'reading-time'
+import type { Locale } from './translations'
 
-const articlesDirectory = path.join(process.cwd(), 'content/articles')
+const articlesDir = (locale: Locale = 'en') =>
+  locale === 'es'
+    ? path.join(process.cwd(), 'content/articles/es')
+    : path.join(process.cwd(), 'content/articles')
 
 export interface ArticleFrontmatter {
   title: string
@@ -21,10 +25,10 @@ export interface Article extends ArticleFrontmatter {
   content: string
 }
 
-export function getAllArticles(): ArticleFrontmatter[] {
+export function getAllArticles(locale: Locale = 'en'): ArticleFrontmatter[] {
   let fileNames: string[] = []
   try {
-    fileNames = fs.readdirSync(articlesDirectory)
+    fileNames = fs.readdirSync(articlesDir(locale))
   } catch {
     return []
   }
@@ -33,7 +37,7 @@ export function getAllArticles(): ArticleFrontmatter[] {
     .filter((name) => name.endsWith('.mdx'))
     .map((fileName) => {
       const slug = fileName.replace(/\.mdx$/, '')
-      const fullPath = path.join(articlesDirectory, fileName)
+      const fullPath = path.join(articlesDir(locale), fileName)
       const fileContents = fs.readFileSync(fullPath, 'utf8')
       const { data, content } = matter(fileContents)
       const stats = readingTime(content)
@@ -58,9 +62,9 @@ export function getAllArticles(): ArticleFrontmatter[] {
   )
 }
 
-export function getArticleBySlug(slug: string): Article | null {
+export function getArticleBySlug(slug: string, locale: Locale = 'en'): Article | null {
   try {
-    const fullPath = path.join(articlesDirectory, `${slug}.mdx`)
+    const fullPath = path.join(articlesDir(locale), `${slug}.mdx`)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const { data, content } = matter(fileContents)
     const stats = readingTime(content)
@@ -84,22 +88,22 @@ export function getArticleBySlug(slug: string): Article | null {
   }
 }
 
-export function getArticlesByCategory(tag: string): ArticleFrontmatter[] {
+export function getArticlesByCategory(tag: string, locale: Locale = 'en'): ArticleFrontmatter[] {
   const normalized = tag.toLowerCase().replace(/-/g, ' ')
-  return getAllArticles().filter((article) =>
+  return getAllArticles(locale).filter((article) =>
     article.category.some((cat) => cat.toLowerCase() === normalized)
   )
 }
 
-export function getFeaturedArticle(): ArticleFrontmatter | null {
-  const articles = getAllArticles()
+export function getFeaturedArticle(locale: Locale = 'en'): ArticleFrontmatter | null {
+  const articles = getAllArticles(locale)
   return articles.find((a) => a.featured) || articles[0] || null
 }
 
-export function getAllSlugs(): string[] {
+export function getAllSlugs(locale: Locale = 'en'): string[] {
   try {
     return fs
-      .readdirSync(articlesDirectory)
+      .readdirSync(articlesDir(locale))
       .filter((name) => name.endsWith('.mdx'))
       .map((name) => name.replace(/\.mdx$/, ''))
   } catch {
@@ -110,9 +114,10 @@ export function getAllSlugs(): string[] {
 export function getRelatedArticles(
   currentSlug: string,
   categories: string[],
-  count = 3
+  count = 3,
+  locale: Locale = 'en'
 ): ArticleFrontmatter[] {
-  return getAllArticles()
+  return getAllArticles(locale)
     .filter((article) => article.slug !== currentSlug)
     .filter((article) =>
       article.category.some((cat) =>

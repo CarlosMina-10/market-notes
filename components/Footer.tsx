@@ -1,15 +1,23 @@
-import Link from 'next/link'
-import NewsletterSection from './NewsletterSection'
+'use client'
 
-const siteLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/articles', label: 'Articles' },
-  { href: '/about', label: 'About' },
-  { href: '/meet-the-author', label: 'Meet the Author' },
-  { href: '/newsletter', label: 'Newsletter' },
-]
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import NewsletterSection from './NewsletterSection'
+import { ui, type Locale } from '@/lib/translations'
 
 export default function Footer() {
+  const pathname = usePathname()
+  const locale: Locale = pathname.startsWith('/es') ? 'es' : 'en'
+  const t = ui[locale]
+
+  const siteLinks = [
+    { href: locale === 'es' ? '/es' : '/', label: t.nav.home },
+    { href: locale === 'es' ? '/es/articles' : '/articles', label: t.nav.articles },
+    { href: locale === 'es' ? '/es/about' : '/about', label: t.nav.about },
+    { href: locale === 'es' ? '/es/meet-the-author' : '/meet-the-author', label: t.nav.meetAuthor },
+    { href: locale === 'es' ? '/es/newsletter' : '/newsletter', label: t.nav.subscribe },
+  ]
+
   return (
     <footer>
       {/* Electric blue top border */}
@@ -21,13 +29,13 @@ export default function Footer() {
             {/* Column 1: Logo + Site Links */}
             <div>
               <Link
-                href="/"
+                href={locale === 'es' ? '/es' : '/'}
                 className="font-display text-2xl font-bold text-white block mb-2 hover:text-mn-accent transition-colors"
               >
                 Market Notes
               </Link>
               <p className="text-mn-muted text-sm mb-8 leading-relaxed">
-                Where Business, Finance, and Community Impact Meet
+                {t.footer.tagline}
               </p>
               <nav className="flex flex-col gap-2.5">
                 {siteLinks.map((link) => (
@@ -42,21 +50,21 @@ export default function Footer() {
               </nav>
             </div>
 
-            {/* Column 2: Newsletter */}
+            {/* Column 2: New Article Alerts */}
             <div>
               <h3 className="text-white font-semibold text-xs uppercase tracking-[0.12em] mb-5">
-                Weekly Newsletter
+                {t.subscribe.footerHeading}
               </h3>
               <p className="text-mn-muted text-sm mb-5 leading-relaxed">
-                Market insights delivered weekly. No noise, just signal.
+                {t.subscribe.footerDesc}
               </p>
-              <NewsletterSection variant="footer" />
+              <NewsletterSection variant="footer" locale={locale} />
             </div>
 
             {/* Column 3: Social */}
             <div>
               <h3 className="text-white font-semibold text-xs uppercase tracking-[0.12em] mb-5">
-                Connect
+                {t.footer.connect}
               </h3>
               <div className="flex gap-4">
                 <a
@@ -85,9 +93,7 @@ export default function Footer() {
 
               <div className="mt-8 pt-8 border-t border-mn-border">
                 <p className="text-mn-muted text-xs leading-relaxed">
-                  Written by a finance professional with experience across
-                  treasury operations in Israel, risk analysis in Colombia, and private
-                  capital markets in the United States.
+                  {t.footer.bio}
                 </p>
               </div>
             </div>
@@ -99,12 +105,12 @@ export default function Footer() {
       <div className="bg-mn-bg border-t border-mn-border">
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-2">
           <p className="text-mn-muted text-xs">
-            © 2025 Market Notes. All rights reserved.
+            {t.footer.copyright}
           </p>
           <p className="text-mn-muted text-xs">
-            Built by{' '}
+            {t.footer.builtBy}{' '}
             <Link
-              href="/meet-the-author"
+              href={locale === 'es' ? '/es/meet-the-author' : '/meet-the-author'}
               className="text-mn-accent hover:underline"
             >
               Carlos Mina

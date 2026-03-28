@@ -3,13 +3,16 @@
 import { useState, useMemo } from 'react'
 import ArticleCard from '@/components/ArticleCard'
 import type { ArticleFrontmatter } from '@/lib/mdx'
+import { ui, type Locale } from '@/lib/translations'
 
 interface ArticleSearchProps {
   articles: ArticleFrontmatter[]
+  locale?: Locale
 }
 
-export default function ArticleSearch({ articles }: ArticleSearchProps) {
+export default function ArticleSearch({ articles, locale = 'en' }: ArticleSearchProps) {
   const [query, setQuery] = useState('')
+  const t = ui[locale].articles
 
   const filtered = useMemo(() => {
     const q = query.toLowerCase().trim()
@@ -31,7 +34,6 @@ export default function ArticleSearch({ articles }: ArticleSearchProps) {
       {/* Search input */}
       <div className="flex justify-center px-6 pb-10 max-w-7xl mx-auto">
         <div className="relative w-full max-w-[600px]">
-          {/* Magnifying glass icon */}
           <div className="pointer-events-none absolute inset-y-0 left-4 flex items-center">
             <svg
               width="16"
@@ -52,7 +54,7 @@ export default function ArticleSearch({ articles }: ArticleSearchProps) {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search articles..."
+            placeholder={t.searchPlaceholder}
             className="w-full bg-mn-surface text-white placeholder:text-mn-muted border border-mn-border pl-11 pr-4 py-3 text-sm outline-none focus:border-[#2563eb] transition-colors duration-200"
           />
         </div>
@@ -64,14 +66,16 @@ export default function ArticleSearch({ articles }: ArticleSearchProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-mn-border">
             {filtered.map((article) => (
               <div key={article.slug} className="bg-mn-bg h-full">
-                <ArticleCard article={article} />
+                <ArticleCard article={article} locale={locale} />
               </div>
             ))}
           </div>
         ) : (
           <div className="text-center py-24">
             <p className="text-mn-muted text-base">
-              No articles found for &ldquo;{query}&rdquo;.
+              {locale === 'es'
+                ? `No se encontraron artículos para "${query}".`
+                : `No articles found for "${query}".`}
             </p>
           </div>
         )}

@@ -201,9 +201,9 @@ export default function HomePage() {
             </h1>
 
             <p className="text-mn-muted text-lg md:text-xl max-w-lg leading-relaxed mb-12">
-              Where Business, Finance, and Community Impact Meet.
-              Finance analysis at the intersection of markets, capital, and
-              community — written for professionals and curious minds alike.
+              Where business, finance and community impact meet.
+              Analysis at the intersection of capital and community impact —
+              written by a curious mind.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

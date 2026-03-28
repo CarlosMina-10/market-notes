@@ -5,42 +5,42 @@ import FadeIn from '@/components/FadeIn'
 import { ui } from '@/lib/translations'
 
 export const metadata: Metadata = {
-  title: 'Meet the Author — Carlos Mina',
+  title: 'Conoce al Autor — Carlos Mina',
   description:
-    'Where business, finance and community impact meet. Analysis at the intersection of capital and community impact — written by a curious mind.',
+    'Donde los negocios, las finanzas y el impacto comunitario se encuentran. Análisis en la intersección del capital y el impacto comunitario — escrito por una mente curiosa.',
 }
 
-const t = ui.en.meetAuthor
+const t = ui.es.meetAuthor
 
 const timeline = [
   {
     icon: '🎓',
-    title: 'B.S. in Finance',
-    body: 'Foundation in financial theory, capital markets, and corporate finance. The starting point of a career built across three continents.',
+    title: 'Licenciatura en Finanzas',
+    body: 'Base en teoría financiera, mercados de capital y finanzas corporativas. El punto de partida de una carrera construida en tres continentes.',
   },
   {
     icon: '🌍',
-    title: 'Treasury Specialist — Israel',
-    body: 'Cross-border capital flows, liquidity management, and multi-currency treasury operations in one of the world\'s most dynamic financial environments.',
+    title: 'Especialista en Tesorería — Israel',
+    body: 'Flujos de capital transfronterizos, gestión de liquidez y operaciones de tesorería en múltiples monedas en uno de los entornos financieros más dinámicos del mundo.',
   },
   {
     icon: '🌎',
-    title: 'Risk Analyst — Colombia',
-    body: 'Financial risk assessment, portfolio exposure analysis, and market risk frameworks across Latin America. Worked closely with sovereign and corporate exposure in an emerging market context.',
+    title: 'Analista de Riesgo — Colombia',
+    body: 'Evaluación de riesgo financiero, análisis de exposición de portafolios y marcos de riesgo de mercado en América Latina. Trabajo directo con exposición soberana y corporativa en un contexto de mercados emergentes.',
   },
   {
     icon: '🎓',
     title: 'MBA — Boston University, Boston, MA',
-    body: 'STEM-designated MBA with a focus on global finance, management science, and strategy. The analytical and strategic lens that now drives Market Notes.',
+    body: 'MBA con designación STEM, enfocado en finanzas globales, ciencias de gestión y estrategia. La perspectiva analítica y estratégica que impulsa Market Notes.',
   },
   {
     icon: '🏦',
-    title: 'Private Capital Operations — United States',
-    body: 'Currently working in fund administration and private capital markets, sitting at the intersection of institutional investment, NAV calculation, investor reporting, and market infrastructure.',
+    title: 'Operaciones de Capital Privado — Estados Unidos',
+    body: 'Actualmente trabaja en administración de fondos y mercados de capital privado, en la intersección de la inversión institucional, cálculo de NAV, reportes a inversores e infraestructura de mercado.',
   },
 ]
 
-export default function MeetTheAuthorPage() {
+export default function EsMeetTheAuthorPage() {
   return (
     <>
       <section className="pt-32 pb-16 px-6 max-w-4xl mx-auto">
@@ -60,7 +60,6 @@ export default function MeetTheAuthorPage() {
       <section className="px-6 max-w-4xl mx-auto pb-16">
         <FadeIn>
           <div className="flex flex-col items-center mb-14">
-            {/* Author photo */}
             <div
               className="relative w-full max-w-[280px] aspect-square rounded-lg overflow-hidden mb-8"
               style={{ border: '2px solid #2563eb', boxShadow: '0 0 40px rgba(37,99,235,0.15)' }}
@@ -74,8 +73,6 @@ export default function MeetTheAuthorPage() {
                 priority
               />
             </div>
-
-            {/* Intro */}
             <div className="w-full max-w-2xl text-center">
               <p className="text-[#d1d5db] text-base leading-loose">{t.bio}</p>
               <div className="flex flex-wrap justify-center gap-3 mt-6">
@@ -87,7 +84,6 @@ export default function MeetTheAuthorPage() {
           </div>
         </FadeIn>
 
-        {/* Timeline */}
         <FadeIn delay={80}>
           <h2 className="font-display text-2xl text-white mb-2">{t.careerTimeline}</h2>
           <div className="h-px w-12 bg-mn-accent mb-10" />
@@ -114,27 +110,23 @@ export default function MeetTheAuthorPage() {
           </div>
         </FadeIn>
 
-        {/* Closing */}
         <FadeIn delay={100}>
           <div className="mt-4 p-8 border-l-4 border-mn-accent bg-mn-surface/50">
             <p className="text-[#d1d5db] text-base leading-loose">
-              Market Notes was born from a simple belief: finance doesn&apos;t happen in a vacuum.
-              Markets shape communities, and communities shape markets. Carlos writes to make that
-              connection visible — for professionals, curious readers, and anyone who wants to
-              understand the forces moving capital around the world.
+              Market Notes nació de una convicción simple: las finanzas no ocurren en el vacío.
+              Los mercados dan forma a las comunidades, y las comunidades dan forma a los mercados.
+              Carlos escribe para hacer visible esa conexión — para profesionales, lectores curiosos,
+              y cualquiera que quiera entender las fuerzas que mueven el capital por el mundo.
             </p>
           </div>
         </FadeIn>
 
-        {/* CTA */}
         <FadeIn delay={120}>
           <div className="mt-12 text-center bg-mn-surface border border-mn-border p-10">
-            <p className="text-mn-muted text-sm mb-2 uppercase tracking-wider text-xs">
-              {t.ctaEyebrow}
-            </p>
+            <p className="text-mn-muted text-sm mb-2 uppercase tracking-wider text-xs">{t.ctaEyebrow}</p>
             <p className="font-display text-2xl text-white mb-6">{t.ctaHeading}</p>
             <p className="text-mn-muted text-sm mb-8">{t.ctaDesc}</p>
-            <Link href="/newsletter" className="btn-primary py-3.5 px-10 text-sm">
+            <Link href="/es/newsletter" className="btn-primary py-3.5 px-10 text-sm">
               {t.ctaBtn}
             </Link>
           </div>
