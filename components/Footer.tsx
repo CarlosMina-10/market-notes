@@ -71,7 +71,7 @@ export default function Footer() {
                   </svg>
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/carlosmina-viveros/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-mn-muted hover:text-mn-accent transition-colors duration-200 p-2 border border-mn-border hover:border-mn-accent"

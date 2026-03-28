@@ -23,7 +23,12 @@ export default function HomePage() {
     <>
       {/* ─── Hero ──────────────────────────────────────── */}
       <section className="relative min-h-[90vh] flex items-center hero-grain overflow-hidden pt-16">
-        <div className="absolute inset-0 bg-gradient-to-br from-mn-bg via-mn-bg to-[#060610]" />
+        {/* Background image with dark overlay */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-fixed"
+          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1920&q=80)' }}
+        />
+        <div className="absolute inset-0" style={{ background: 'rgba(13, 13, 13, 0.85)' }} />
 
         {/* Vertical accent lines */}
         <div className="absolute top-0 right-[28%] w-px h-full bg-gradient-to-b from-transparent via-mn-accent/10 to-transparent" />
