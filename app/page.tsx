@@ -12,6 +12,13 @@ export const metadata: Metadata = {
     'Independent analysis at the intersection of business, finance, and community impact. Written by a finance professional with experience across three continents.',
 }
 
+const BUILDINGS: number[][] = [
+  [0,452,62,98],[72,412,52,138],[134,372,76,178],[220,318,82,232],
+  [312,265,96,285],[418,212,77,338],[505,160,92,390],[607,130,128,420],
+  [745,100,88,450],[843,142,76,408],[929,188,106,362],[1045,242,80,308],
+  [1135,295,86,255],[1231,342,80,208],[1321,392,66,158],[1397,435,43,115],
+]
+
 export default function HomePage() {
   const allArticles = getAllArticles()
   const featured = getFeaturedArticle()
@@ -39,14 +46,6 @@ export default function HomePage() {
               <stop offset="0%" stopColor="#2563eb" stopOpacity="0.14" />
               <stop offset="100%" stopColor="#2563eb" stopOpacity="0.01" />
             </linearGradient>
-            <filter id="lineGlow" x="-20%" y="-100%" width="140%" height="300%">
-              <feGaussianBlur stdDeviation="4" result="blur" />
-              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-            <filter id="winGlow" x="-100%" y="-100%" width="300%" height="300%">
-              <feGaussianBlur stdDeviation="2.5" result="blur" />
-              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
             <pattern id="winPat" x="0" y="0" width="15" height="13" patternUnits="userSpaceOnUse">
               <rect x="1" y="1" width="5" height="4" fill="#0f1828" />
               <rect x="9" y="1" width="5" height="4" fill="#0c1420" />
@@ -81,56 +80,44 @@ export default function HomePage() {
           ))}
 
           {/* Buildings — base fills */}
-          {(
-            [[0,452,62,98],[72,412,52,138],[134,372,76,178],[220,318,82,232],
-             [312,265,96,285],[418,212,77,338],[505,160,92,390],[607,130,128,420],
-             [745,100,88,450],[843,142,76,408],[929,188,106,362],[1045,242,80,308],
-             [1135,295,86,255],[1231,342,80,208],[1321,392,66,158],[1397,435,43,115]]
-            as number[][]
-          ).map(([x,y,w,h], i) => (
+          {BUILDINGS.map(([x,y,w,h], i) => (
             <rect key={`b${i}`} x={x} y={y} width={w} height={h} fill="#0e0e16" />
           ))}
 
           {/* Buildings — window pattern overlay (clipped per building) */}
-          {(
-            [[0,452,62,98],[72,412,52,138],[134,372,76,178],[220,318,82,232],
-             [312,265,96,285],[418,212,77,338],[505,160,92,390],[607,130,128,420],
-             [745,100,88,450],[843,142,76,408],[929,188,106,362],[1045,242,80,308],
-             [1135,295,86,255],[1231,342,80,208],[1321,392,66,158],[1397,435,43,115]]
-            as number[][]
-          ).map(([x,y,w,h], i) => (
+          {BUILDINGS.map(([x,y,w,h], i) => (
             <rect key={`w${i}`} x={x} y={y} width={w} height={h} fill="url(#winPat)" clipPath={`url(#c${i})`} opacity="0.75"/>
           ))}
 
           {/* Glowing lit windows — tallest buildings (c7 / c8 / c9) */}
-          <rect x="618" y="150" width="6" height="5" fill="#2563eb" opacity="0.85" filter="url(#winGlow)"/>
-          <rect x="648" y="163" width="6" height="5" fill="#2563eb" opacity="0.90" filter="url(#winGlow)"/>
-          <rect x="693" y="175" width="6" height="5" fill="#2563eb" opacity="0.75" filter="url(#winGlow)"/>
+          <rect x="618" y="150" width="6" height="5" fill="#2563eb" opacity="0.85"/>
+          <rect x="648" y="163" width="6" height="5" fill="#2563eb" opacity="0.90"/>
+          <rect x="693" y="175" width="6" height="5" fill="#2563eb" opacity="0.75"/>
           <rect x="633" y="150" width="6" height="5" fill="#3b7cf4" opacity="0.55"/>
           <rect x="663" y="150" width="6" height="5" fill="#2563eb" opacity="0.45"/>
           <rect x="708" y="188" width="6" height="5" fill="#2563eb" opacity="0.60"/>
           <rect x="718" y="163" width="6" height="5" fill="#4d8ef0" opacity="0.40"/>
-          <rect x="753" y="120" width="7" height="5" fill="#2563eb" opacity="0.95" filter="url(#winGlow)"/>
-          <rect x="768" y="120" width="7" height="5" fill="#2563eb" opacity="0.75" filter="url(#winGlow)"/>
-          <rect x="753" y="148" width="7" height="5" fill="#2563eb" opacity="0.65" filter="url(#winGlow)"/>
-          <rect x="798" y="148" width="7" height="5" fill="#2563eb" opacity="0.80" filter="url(#winGlow)"/>
+          <rect x="753" y="120" width="7" height="5" fill="#2563eb" opacity="0.95"/>
+          <rect x="768" y="120" width="7" height="5" fill="#2563eb" opacity="0.75"/>
+          <rect x="753" y="148" width="7" height="5" fill="#2563eb" opacity="0.65"/>
+          <rect x="798" y="148" width="7" height="5" fill="#2563eb" opacity="0.80"/>
           <rect x="783" y="135" width="7" height="5" fill="#3b7cf4" opacity="0.50"/>
           <rect x="813" y="120" width="7" height="5" fill="#1d55d0" opacity="0.45"/>
-          <rect x="783" y="162" width="7" height="5" fill="#2563eb" opacity="0.70" filter="url(#winGlow)"/>
+          <rect x="783" y="162" width="7" height="5" fill="#2563eb" opacity="0.70"/>
           <rect x="851" y="162" width="6" height="5" fill="#2563eb" opacity="0.70"/>
-          <rect x="866" y="148" width="6" height="5" fill="#2563eb" opacity="0.90" filter="url(#winGlow)"/>
+          <rect x="866" y="148" width="6" height="5" fill="#2563eb" opacity="0.90"/>
           <rect x="881" y="162" width="6" height="5" fill="#3b7cf4" opacity="0.50"/>
           <rect x="896" y="175" width="6" height="5" fill="#2563eb" opacity="0.60"/>
           {/* Mid buildings */}
-          <rect x="515" y="178" width="5" height="4" fill="#2563eb" opacity="0.70" filter="url(#winGlow)"/>
+          <rect x="515" y="178" width="5" height="4" fill="#2563eb" opacity="0.70"/>
           <rect x="530" y="192" width="5" height="4" fill="#2563eb" opacity="0.50"/>
           <rect x="560" y="205" width="5" height="4" fill="#1e4db0" opacity="0.60"/>
-          <rect x="937" y="205" width="7" height="5" fill="#2563eb" opacity="0.60" filter="url(#winGlow)"/>
+          <rect x="937" y="205" width="7" height="5" fill="#2563eb" opacity="0.60"/>
           <rect x="952" y="218" width="7" height="5" fill="#2563eb" opacity="0.80"/>
           <rect x="995" y="218" width="7" height="5" fill="#3b7cf4" opacity="0.50"/>
           <rect x="1053" y="260" width="5" height="4" fill="#2563eb" opacity="0.60"/>
           <rect x="1068" y="273" width="5" height="4" fill="#2563eb" opacity="0.40"/>
-          <rect x="1143" y="313" width="5" height="4" fill="#2563eb" opacity="0.70" filter="url(#winGlow)"/>
+          <rect x="1143" y="313" width="5" height="4" fill="#2563eb" opacity="0.70"/>
           <rect x="1158" y="326" width="5" height="4" fill="#1e4db0" opacity="0.50"/>
           <rect x="431"  y="230" width="5" height="4" fill="#2563eb" opacity="0.50"/>
           <rect x="446"  y="243" width="5" height="4" fill="#1e4db0" opacity="0.55"/>
@@ -147,7 +134,7 @@ export default function HomePage() {
           {/* Trend line — wide glow pass */}
           <polyline
             points="60,490 130,468 200,474 270,450 350,428 430,402 510,373 590,345 660,318 730,292 800,264 870,238 940,215 1010,225 1080,198 1150,175 1220,152 1290,128 1360,106"
-            fill="none" stroke="#2563eb" strokeWidth="8" opacity="0.18" filter="url(#lineGlow)"
+            fill="none" stroke="#2563eb" strokeWidth="8" opacity="0.18"
           />
           {/* Trend line — crisp main line */}
           <polyline
