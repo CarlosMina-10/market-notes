@@ -64,7 +64,7 @@ export default function MeetTheAuthorPage() {
               style={{ border: '2px solid #2563eb', boxShadow: '0 0 40px rgba(37,99,235,0.15)' }}
             >
               <Image
-                src="/carlos-mina.jpg"
+                src="/carlos-mina.jpg.jpg"
                 alt="Carlos Mina"
                 fill
                 className="object-cover object-top"
@@ -76,9 +76,10 @@ export default function MeetTheAuthorPage() {
             {/* Intro */}
             <div className="w-full max-w-2xl text-center">
               <p className="text-[#d1d5db] text-base leading-loose">
-                Carlos Mina is a finance professional with a global footprint —
-                from the bond desks of Israel to the risk floors of Colombia,
-                and now the private capital markets of the United States.
+                Carlos Mina has spent his career asking one question: who does capital actually serve?
+                From treasury operations in Israel to risk analysis in Colombia, and now private capital
+                markets in the United States — his work has always sat at the intersection of finance
+                and its real-world consequences.
               </p>
               <div className="flex flex-wrap justify-center gap-3 mt-6">
                 {['Treasury', 'Risk Analysis', 'Private Capital', 'LatAm Markets', 'Fund Administration'].map((tag) => (
