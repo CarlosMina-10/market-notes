@@ -56,6 +56,9 @@ export const metadata: Metadata = {
     images: ['/og-image.png'],
     creator: '@marketnotes_co',
   },
+  verification: {
+    google: 'fxvRaE1pdCsZSToF27B',
+  },
   robots: {
     index: true,
     follow: true,
