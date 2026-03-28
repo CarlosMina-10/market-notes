@@ -73,7 +73,7 @@ const mdxComponents = {
     <h3 className="font-display text-xl text-white mt-8 mb-3">{children}</h3>
   ),
   hr: () => <hr className="border-none border-t border-mn-border my-10" />,
-  a: ({ href, children }: { href?: string; children: React.ReactNode }) => (
+  a: ({ href, children }: { href?: string; children?: React.ReactNode }) => (
     <a
       href={href}
       className="text-mn-accent underline underline-offset-2 decoration-mn-accent/40 hover:decoration-mn-accent transition-colors"
