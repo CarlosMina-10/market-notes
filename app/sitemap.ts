@@ -3,7 +3,7 @@ import { getAllArticles, ALL_CATEGORIES } from '@/lib/mdx'
 import { categoryToSlug } from '@/lib/utils'
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || 'https://marketnotes.vercel.app'
+  process.env.NEXT_PUBLIC_SITE_URL || 'https://market-notes-peach.vercel.app'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const articles = getAllArticles()
