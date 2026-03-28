@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     creator: '@marketnotes_co',
   },
   verification: {
-    google: 'fxvRaE1pdCsZSToF27B',
+    google: 'fxvRaE1pdCsZSToF27BJeU9bntrR7EmVrYPz77oV3Rk',
   },
   robots: {
     index: true,
