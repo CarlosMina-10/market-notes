@@ -2,7 +2,7 @@
 
 > **Where Business, Finance, and Community Impact Meet**
 
-A production-ready publication website built with Next.js 14 (App Router), Tailwind CSS, and MDX. Written by Carlos Mina — finance professional with experience across bond desks in Israel, risk floors in Colombia, and private capital markets in the United States.
+A production-ready publication website built with Next.js 14 (App Router), Tailwind CSS, and MDX. Written by Carlos Mina — finance professional with experience across treasury operations in Israel, risk analysis in Colombia, and private capital markets in the United States.
 
 ---
 

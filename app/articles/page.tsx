@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { getAllArticles, ALL_CATEGORIES } from '@/lib/mdx'
-import ArticleCard from '@/components/ArticleCard'
-import FadeIn from '@/components/FadeIn'
+import ArticleSearch from '@/components/ArticleSearch'
+// getAllArticles returns ArticleFrontmatter[] — passed directly to ArticleSearch
 import Link from 'next/link'
 import { categoryToSlug } from '@/lib/utils'
 
@@ -54,24 +54,8 @@ export default function ArticlesPage() {
         </div>
       </section>
 
-      {/* Articles Grid */}
-      <section className="px-6 max-w-7xl mx-auto pb-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-mn-border">
-          {articles.map((article, i) => (
-            <FadeIn key={article.slug} delay={i * 50} className="bg-mn-bg">
-              <div className="bg-mn-bg h-full">
-                <ArticleCard article={article} />
-              </div>
-            </FadeIn>
-          ))}
-        </div>
-
-        {articles.length === 0 && (
-          <div className="text-center py-24">
-            <p className="text-mn-muted">No articles published yet.</p>
-          </div>
-        )}
-      </section>
+      {/* Search + Articles grid (client component) */}
+      <ArticleSearch articles={articles} />
     </>
   )
 }

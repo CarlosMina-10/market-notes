@@ -86,7 +86,7 @@ export default function Footer() {
               <div className="mt-8 pt-8 border-t border-mn-border">
                 <p className="text-mn-muted text-xs leading-relaxed">
                   Written by a finance professional with experience across
-                  bond desks in Israel, risk floors in Colombia, and private
+                  treasury operations in Israel, risk analysis in Colombia, and private
                   capital markets in the United States.
                 </p>
               </div>

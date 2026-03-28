@@ -6,7 +6,7 @@ import FadeIn from '@/components/FadeIn'
 export const metadata: Metadata = {
   title: 'Meet the Author — Carlos Mina',
   description:
-    'Carlos Mina is a finance professional with a global footprint — from the bond desks of Israel to the risk floors of Colombia, and now the private capital markets of the United States.',
+    'Carlos Mina is a finance professional with a global footprint — from treasury operations in Israel to risk analysis in Colombia, and now the private capital markets of the United States.',
 }
 
 const timeline = [

@@ -202,8 +202,8 @@ export default function HomePage() {
 
             <p className="text-mn-muted text-lg md:text-xl max-w-lg leading-relaxed mb-12">
               Where Business, Finance, and Community Impact Meet.
-              Finance analysis from the bond desks of three continents — written
-              for professionals and curious minds alike.
+              Finance analysis at the intersection of markets, capital, and
+              community — written for professionals and curious minds alike.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
