@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import FadeIn from '@/components/FadeIn'
@@ -56,26 +57,30 @@ export default function MeetTheAuthorPage() {
       {/* Author card */}
       <section className="px-6 max-w-4xl mx-auto pb-16">
         <FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-14">
-            {/* Photo placeholder */}
-            <div className="md:col-span-1">
-              <div className="bg-mn-surface border border-mn-border aspect-square flex flex-col items-center justify-center gap-3">
-                <div className="w-10 h-px bg-mn-accent" />
-                <span className="text-mn-muted text-xs uppercase tracking-wider text-center px-4">
-                  Photo Coming Soon
-                </span>
-                <div className="w-10 h-px bg-mn-accent" />
-              </div>
+          <div className="flex flex-col items-center mb-14">
+            {/* Author photo — centered above intro */}
+            <div
+              className="relative w-full max-w-[280px] aspect-square rounded-lg overflow-hidden mb-8"
+              style={{ border: '2px solid #2563eb', boxShadow: '0 0 40px rgba(37,99,235,0.15)' }}
+            >
+              <Image
+                src="/carlos-mina.jpg"
+                alt="Carlos Mina"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, 280px"
+                priority
+              />
             </div>
 
             {/* Intro */}
-            <div className="md:col-span-3">
+            <div className="w-full max-w-2xl text-center">
               <p className="text-[#d1d5db] text-base leading-loose">
                 Carlos Mina is a finance professional with a global footprint —
                 from the bond desks of Israel to the risk floors of Colombia,
                 and now the private capital markets of the United States.
               </p>
-              <div className="flex flex-wrap gap-3 mt-6">
+              <div className="flex flex-wrap justify-center gap-3 mt-6">
                 {['Treasury', 'Risk Analysis', 'Private Capital', 'LatAm Markets', 'Fund Administration'].map((tag) => (
                   <span key={tag} className="category-tag">
                     {tag}
