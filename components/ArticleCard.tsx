@@ -52,16 +52,16 @@ export default function ArticleCard({
             <p className="text-mn-muted text-base md:text-lg leading-relaxed mb-8 max-w-2xl">
               {article.excerpt}
             </p>
-            <div className="flex items-center gap-4 text-xs text-mn-muted uppercase tracking-wider">
+            <div className="flex items-center gap-4 text-xs text-mn-muted uppercase tracking-wider mb-8">
               <span className="font-medium">{article.author}</span>
               <span className="w-1 h-1 bg-mn-border rounded-full" />
               <span>{formatDate(article.date)}</span>
               <span className="w-1 h-1 bg-mn-border rounded-full" />
               <span>{article.readTime}</span>
-              <span className="ml-auto text-mn-accent group-hover:translate-x-1 transition-transform duration-200">
-                {locale === 'es' ? 'Leer →' : 'Read →'}
-              </span>
             </div>
+            <span className="inline-flex items-center gap-2 bg-mn-accent text-white text-sm font-semibold py-3 px-8 group-hover:bg-blue-600 transition-colors duration-200">
+              {locale === 'es' ? 'Leer Ahora →' : 'Read Now →'}
+            </span>
           </div>
         </article>
       </Link>
