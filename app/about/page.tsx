@@ -33,12 +33,13 @@ export default function AboutPage() {
         <FadeIn>
           <div className="mb-12">
             <p className="text-white text-xl leading-relaxed mb-6 font-display italic">
-              &ldquo;Finance doesn&apos;t happen in a vacuum. Markets shape communities, and communities shape markets.&rdquo;
+              &ldquo;Market Notes exists at the intersection of capital and community. Financial events are never just numbers — they are forces that shape how people live, cooperate, and build futures together.&rdquo;
             </p>
             <p className="text-[#d1d5db] text-base leading-loose">
-              Market Notes was built on that belief. Every piece of analysis here is written through
-              that lens — not just what the numbers say, but what they mean for the people and
-              communities that live downstream of capital flows, monetary policy, and investment decisions.
+              Our analysis is technical enough to be credible and human enough to be meaningful.
+              Every piece published here asks not just what the numbers say, but who is shaped by them —
+              the communities, families, and workers who live downstream of capital flows, monetary
+              policy, and investment decisions.
             </p>
           </div>
         </FadeIn>
@@ -47,10 +48,11 @@ export default function AboutPage() {
           <h2 className="font-display text-2xl text-white mb-4 mt-10">Editorial Philosophy</h2>
           <div className="h-px w-12 bg-mn-accent mb-6" />
           <p className="text-[#d1d5db] text-base leading-loose mb-6">
-            Market Notes exists because the dominant financial press is too often written by insiders
-            for insiders. The coverage is excellent on technicals and thin on consequences. We aim to
-            close that gap — providing rigorous analysis that doesn&apos;t forget to ask: who benefits,
-            who bears the risk, and who doesn&apos;t have a seat at the table?
+            Market Notes exists because financial analysis without human context is incomplete. The
+            dominant financial press excels at the mechanics of capital — and too often stops there.
+            We don&apos;t. Every article asks: who is living with this decision, who bears the cost
+            when the model is wrong, and what does it mean for the communities that exist downstream
+            of these capital flows?
           </p>
           <p className="text-[#d1d5db] text-base leading-loose mb-6">
             The publication has a particular focus on Latin American and emerging markets — regions

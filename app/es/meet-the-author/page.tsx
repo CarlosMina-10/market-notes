@@ -113,10 +113,10 @@ export default function EsMeetTheAuthorPage() {
         <FadeIn delay={100}>
           <div className="mt-4 p-8 border-l-4 border-mn-accent bg-mn-surface/50">
             <p className="text-[#d1d5db] text-base leading-loose">
-              Market Notes nació de una convicción simple: las finanzas no ocurren en el vacío.
-              Los mercados dan forma a las comunidades, y las comunidades dan forma a los mercados.
-              Carlos escribe para hacer visible esa conexión — para profesionales, lectores curiosos,
-              y cualquiera que quiera entender las fuerzas que mueven el capital por el mundo.
+              Market Notes nació de una convicción simple: los eventos financieros no están aislados
+              de la vida humana — dan forma a cómo cooperan las comunidades, cómo planifican las
+              familias y cómo avanzan las sociedades. Carlos escribe para hacer visible esa conexión,
+              y para hacer la pregunta que los mercados rara vez hacen: ¿a quién sirve esto realmente?
             </p>
           </div>
         </FadeIn>

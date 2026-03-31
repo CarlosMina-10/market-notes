@@ -3,7 +3,6 @@ import { getAllArticles, getFeaturedArticle } from '@/lib/mdx'
 import ArticleCard from '@/components/ArticleCard'
 import NewsletterSection from '@/components/NewsletterSection'
 import FadeIn from '@/components/FadeIn'
-import { formatDate } from '@/lib/utils'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -95,6 +94,27 @@ export default function EsHomePage() {
           </div>
         </section>
       )}
+
+      {/* Opinion Banner */}
+      <FadeIn>
+        <section className="bg-mn-accent py-14 px-6 mt-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="font-display text-3xl md:text-4xl text-white mb-5 tracking-tight">
+              Las finanzas nos afectan a todos — no solo a los inversores.
+            </h2>
+            <p className="text-blue-100 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+              Cada artículo de Market Notes conecta los números con las personas detrás de ellos.
+              Lee, reflexiona y comparte tu perspectiva en los comentarios.
+            </p>
+            <Link
+              href="/es/articles"
+              className="inline-block bg-white text-mn-accent font-semibold text-sm py-3 px-8 hover:bg-blue-50 transition-colors duration-200"
+            >
+              Leer y Reflexionar →
+            </Link>
+          </div>
+        </section>
+      </FadeIn>
 
       <FadeIn>
         <NewsletterSection variant="full" locale="es" />

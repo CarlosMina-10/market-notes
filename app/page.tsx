@@ -170,7 +170,7 @@ export default function HomePage() {
         </svg>
 
         {/* Dark overlay — keeps text readable while SVG shows through */}
-        <div className="absolute inset-0" style={{ background: 'rgba(13, 13, 13, 0.80)' }} />
+        <div className="absolute inset-0" style={{ background: 'rgba(13, 13, 13, 0.65)' }} />
 
         {/* Vertical accent lines */}
         <div className="absolute top-0 right-[28%] w-px h-full bg-gradient-to-b from-transparent via-mn-accent/10 to-transparent" />
@@ -348,18 +348,17 @@ export default function HomePage() {
         <section className="bg-mn-accent py-14 px-6 mt-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="font-display text-3xl md:text-4xl text-white mb-5 tracking-tight">
-              Your perspective matters.
+              Finance affects everyone — not just investors.
             </h2>
             <p className="text-blue-100 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-8">
-              Every article on Market Notes opens the floor — read, react, and
-              drop your take in the comments. Finance is a conversation, not a
-              monologue.
+              Every article on Market Notes connects the numbers to the people
+              behind them. Read, reflect, and share your perspective in the comments.
             </p>
             <Link
               href="/articles"
               className="inline-block bg-white text-mn-accent font-semibold text-sm py-3 px-8 hover:bg-blue-50 transition-colors duration-200"
             >
-              Join the Conversation
+              Read and Reflect →
             </Link>
           </div>
         </section>

@@ -140,12 +140,12 @@ export const ui = {
     },
     about: {
       eyebrow: 'Acerca de',
-      quote: 'Las finanzas no ocurren en el vacío. Los mercados dan forma a las comunidades, y las comunidades dan forma a los mercados.',
+      quote: 'Market Notes existe en la intersección del capital y la comunidad. Los eventos financieros nunca son solo números — son fuerzas que dan forma a cómo las personas viven, cooperan y construyen su futuro.',
       missionBody:
-        'Market Notes fue creado sobre esa convicción. Cada análisis publicado aquí está escrito bajo esa perspectiva — no solo lo que dicen los números, sino lo que significan para las personas y comunidades que viven aguas abajo de los flujos de capital, la política monetaria y las decisiones de inversión.',
+        'Nuestro análisis es lo suficientemente técnico para ser creíble y lo suficientemente humano para ser significativo. Cada análisis publicado aquí no solo pregunta lo que dicen los números, sino quién es moldeado por ellos — las comunidades, familias y trabajadores que viven aguas abajo de los flujos de capital, la política monetaria y las decisiones de inversión.',
       philosophyHeading: 'Filosofía Editorial',
       philosophyBody1:
-        'Market Notes existe porque la prensa financiera dominante está demasiado a menudo escrita por insiders para insiders. La cobertura es excelente en los aspectos técnicos y escasa en las consecuencias. Nuestro objetivo es cerrar esa brecha — proporcionando un análisis riguroso que no olvida preguntar: ¿quién se beneficia, quién asume el riesgo y quién no tiene lugar en la mesa?',
+        'Market Notes existe porque el análisis financiero sin contexto humano está incompleto. La prensa financiera dominante domina la mecánica del capital — y demasiado a menudo se detiene ahí. Nosotros no. Cada artículo pregunta: ¿quién está viviendo con esta decisión, quién asume el costo cuando el modelo falla, y qué significa para las comunidades que existen aguas abajo de estos flujos de capital?',
       philosophyBody2:
         'La publicación tiene un enfoque particular en América Latina y los mercados emergentes — regiones que a menudo solo se cubren cuando están en crisis, e ignoradas cuando están construyendo. Esa asimetría genera puntos ciegos. Market Notes busca proporcionar una cobertura consistente y contextual que trate los mercados latinoamericanos como los sistemas dinámicos y complejos que son.',
       philosophyBody3:

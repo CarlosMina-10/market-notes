@@ -118,10 +118,10 @@ export default function MeetTheAuthorPage() {
         <FadeIn delay={100}>
           <div className="mt-4 p-8 border-l-4 border-mn-accent bg-mn-surface/50">
             <p className="text-[#d1d5db] text-base leading-loose">
-              Market Notes was born from a simple belief: finance doesn&apos;t happen in a vacuum.
-              Markets shape communities, and communities shape markets. Carlos writes to make that
-              connection visible — for professionals, curious readers, and anyone who wants to
-              understand the forces moving capital around the world.
+              Market Notes was born from a simple conviction: financial events are not isolated from
+              human life — they shape how communities cooperate, how families plan, and how societies
+              progress. Carlos writes to make that connection visible, and to ask the question that
+              markets rarely ask: who does this actually serve?
             </p>
           </div>
         </FadeIn>
