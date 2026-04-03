@@ -97,7 +97,8 @@ export function getArticlesByCategory(tag: string, locale: Locale = 'en'): Artic
 
 export function getFeaturedArticle(locale: Locale = 'en'): ArticleFrontmatter | null {
   const articles = getAllArticles(locale)
-  return articles.find((a) => a.featured) || articles[0] || null
+  // Always return the most recent article — no manual flag needed
+  return articles[0] || null
 }
 
 export function getAllSlugs(locale: Locale = 'en'): string[] {

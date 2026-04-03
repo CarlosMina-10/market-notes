@@ -3,6 +3,7 @@ import { getAllArticles, getFeaturedArticle } from '@/lib/mdx'
 import ArticleCard from '@/components/ArticleCard'
 import NewsletterSection from '@/components/NewsletterSection'
 import FadeIn from '@/components/FadeIn'
+import { formatDate } from '@/lib/utils'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -65,7 +66,34 @@ export default function EsHomePage() {
             </span>
           </div>
           <FadeIn>
-            <ArticleCard article={featured} featured locale="es" />
+            <Link href={`/es/articles/${featured.slug}`} className="group block">
+              <article className="bg-mn-surface border border-mn-border hover:border-mn-accent/50 transition-colors duration-300 overflow-hidden">
+                <div className="h-1 w-full bg-gradient-to-r from-mn-accent to-mn-accent/20" />
+                <div className="p-10 md:p-14 lg:p-16">
+                  <div className="flex flex-wrap items-center gap-3 mb-8">
+                    <span className="text-mn-accent text-[0.65rem] uppercase tracking-[0.2em] font-semibold">
+                      Análisis Destacado
+                    </span>
+                    <span className="w-px h-3 bg-mn-border" />
+                    {featured.category.slice(0, 2).map((cat) => (
+                      <span key={cat} className="category-tag">{cat}</span>
+                    ))}
+                    <span className="ml-auto text-mn-muted text-xs">
+                      {formatDate(featured.date)} · {featured.readTime}
+                    </span>
+                  </div>
+                  <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-6 group-hover:text-mn-accent transition-colors duration-300 leading-[1.05] tracking-tight max-w-4xl">
+                    {featured.title}
+                  </h2>
+                  <p className="text-[#d1d5db] text-lg md:text-xl leading-relaxed mb-10 max-w-3xl">
+                    {featured.excerpt}
+                  </p>
+                  <span className="inline-flex items-center gap-2 bg-mn-accent text-white text-sm font-semibold py-3.5 px-10 group-hover:bg-blue-600 transition-colors duration-200">
+                    Leer Ahora →
+                  </span>
+                </div>
+              </article>
+            </Link>
           </FadeIn>
         </section>
       )}
